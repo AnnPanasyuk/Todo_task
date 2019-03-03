@@ -44,22 +44,16 @@
     <div class="main">
         <!-- add partials here -->
         <div class="main_block">
-            <button>Add new todo</button>
         
             <div class="form-container">
-                <form id="todo-form">
-                    <input id="form-title" placeholder="Title" type="text">
-                    <input id="form-description" placeholder="Description" type="text">
-                    <input type="submit" name="create" placeholder="Create">
+                <form id="todo-form" class="todo-form">
+                    <input class="input" id="form-title" placeholder="Title" type="text">
+                    <input class="input" id="form-description" placeholder="Description" type="text">
+                    <input class="submit" type="submit" name="create" placeholder="Create">
                 </form>
             </div>
         
-            <ol class="todo-list-container" id="todo-list">
-                <li>
-                    <p class="caption">Title 1</p>
-                    <p class="description">Description 1</p>
-                </li>
-            </ol>
+            <ol class="todo-list-container" id="todo-list"></ol>
         
         </div>
     </div>
