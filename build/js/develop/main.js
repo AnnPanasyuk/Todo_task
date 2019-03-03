@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-    $("select").select2();
-
 });
 
 $(window).on('load', function(){

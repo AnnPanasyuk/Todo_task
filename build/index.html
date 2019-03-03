@@ -47,39 +47,19 @@
             <button>Add new todo</button>
         
             <div class="form-container">
-                <form>
-                    <input name="title" placeholder="Title" type="text">
-                    <input name="description" placeholder="Description" type="text">
+                <form id="todo-form">
+                    <input id="form-title" placeholder="Title" type="text">
+                    <input id="form-description" placeholder="Description" type="text">
                     <input type="submit" name="create" placeholder="Create">
                 </form>
             </div>
         
-            <div class="todo-list-container">
-                <ol>
-                    <li>
-                        <div class="info-container">
-                            <p class="caption">Title</p>
-                            <p class="description">Description</p>
-                            <input type="checkbox" placeholder="Readiness">
-                        </div>
-                        <div class="actions-container">
-                            <button class="button edit">Edit</button>
-                            <button class="button delete">Delete</button>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="info-container">
-                            <p class="caption">Title</p>
-                            <p class="description">Description</p>
-                            <input type="checkbox" placeholder="Readiness">
-                        </div>
-                        <div class="actions-container">
-                            <button class="button edit">Edit</button>
-                            <button class="button delete">Delete</button>
-                        </div>
-                    </li>
-                </ol>
-            </div>
+            <ol class="todo-list-container" id="todo-list">
+                <li>
+                    <p class="caption">Title 1</p>
+                    <p class="description">Description 1</p>
+                </li>
+            </ol>
         
         </div>
     </div>
