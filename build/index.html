@@ -35,71 +35,27 @@
     <!-- HEADER -->
     <header>
     
-        <h1>i am working</h1>
+        <h1>Todo list</h1>
     
     </header>
     <!-- /HEADER -->
-    
-    <select name="" id="">
-        <option value="">sdfgsdfg</option>
-        <option value="">sdfgsdfg</option>
-        <option value="">sdfgsdfg</option>
-        <option value="">sdfgsdfgsdfg</option>
-        <option value="">sdfgsdfgsdf</option>
-    </select>
 
     <!-- MAIN -->
     <div class="main">
         <!-- add partials here -->
-            <div class="main_block">
-                <h2>Hello</h2>
+        <div class="main_block">
+            <div class="form-container">
+                <form id="todo-form" class="todo-form">
+                    <input class="input" id="form-title" placeholder="Title" type="text">
+                    <input class="input" id="form-description" placeholder="Description" type="text">
+                    <input class="submit" type="submit" name="create" placeholder="Create">
+                </form>
             </div>
+        
+            <ol class="todo-list-container" id="todo-list"></ol>
+        </div>
     </div>
     <!-- /MAIN -->
-
-    <div class="hidden-block">
-    
-        <div id="call_success">
-            <div class="call-success">
-                 <div class="call_success">
-                     <div class="call-title">Спасибо за заявку!</div>
-                     <div class="call-subtitle">Мы свяжемся с Вами в ближайшее время</div>
-                 </div>
-            </div>
-        </div>
-    
-        <div id="call-popup">
-            <form action="ajax.php" class="contact-form">
-                <div class="contact-form-title">
-                    <h5>Lorem ipsum dolor.</h5>
-                </div>
-                <div class="contact-form-row cfix">
-                    <div class="contact-form-item">
-                        <div class="contact-form-item-input form_row">
-                            <div class="form_input">
-                                <input type="text" name="contact_name" required="required" value="" placeholder="Ваше Имя">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-form-item">
-                        <div class="contact-form-item-input form_row">
-                            <div class="form_input">
-                                <input type="text" name="contact_tel" value="" required="required" placeholder="Ваш номер" class="tel-mask">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form-row cfix">
-                    <div class="contact-form-item">
-                        <button type="submit" class="contact-submit">
-                            <span>Отправить заявку</span>
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    
-    </div>
 
     <!-- FOOTER -->
     <footer class="footer">
