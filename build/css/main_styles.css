@@ -85,7 +85,8 @@ li {
     -moz-transition: .3s;
     transition: .3s;
     cursor: pointer;
-    padding: 8px; }
+    padding: 8px;
+    z-index: 1; }
     li .close:hover {
       color: red; }
   li:hover {
