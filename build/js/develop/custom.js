@@ -1,59 +1,36 @@
 'use strict';
 
-let form = document.getElementById('todo-form');
-let formTitle = document.getElementById('form-title');
-let formDescription = document.getElementById('form-description');
-let close = document.getElementsByClassName("close");
+var timers = {};
 
-function createTask() {
-  let todoList = document.getElementById('todo-list');
-  let todoItem = document.createElement('li');
-  let itemCaption = document.createElement('p');
-  let itemDescription = document.createElement('p');
+// прибавит время выполнения f к таймеру timers[timer]
+function timingDecorator(f, timer) {
+  return function() {
+    var start = performance.now();
 
-  itemCaption.className = 'caption';
-  itemDescription.className = 'description';
+    var result = f.apply(this, arguments); // (*)
 
-  let inputTitleValue = formTitle.value;
-  let inputDescriptionValue = formDescription.value;
+    if (!timers[timer]) timers[timer] = 0;
+    timers[timer] += performance.now() - start;
 
-  let titleValue = document.createTextNode(inputTitleValue);
-  let descriptionValue = document.createTextNode(inputDescriptionValue);
-
-  itemCaption.appendChild(titleValue);
-  itemDescription.appendChild(descriptionValue);
-
-  todoItem.appendChild(itemCaption);
-  todoItem.appendChild(itemDescription);
-
-  if (inputTitleValue === '') {
-    alert("You must write something!");
-  } else {
-    todoList.appendChild(todoItem);
-  }
-
-  formTitle.value = '';
-  formDescription.value = '';
-
-  let span = document.createElement("span");
-  let closeIcon = document.createTextNode("\u00D7");
-  span.className = 'close';
-  span.appendChild(closeIcon);
-  todoItem.appendChild(span);
-
-}
-
-function deleteTask() {
-  for (let i = 0; i < close.length; i++) {
-    close[i].onclick = function () {
-      let div = this.parentElement;
-      div.style.display = 'none';
-    }
+    return result;
   }
 }
 
-form.onsubmit = function () {
-  createTask();
-  deleteTask();
-  return false;
-};
+// функция может быть произвольной, например такой:
+var fibonacci = function f(n) {
+  return (n > 2) ? f(n - 1) + f(n - 2) : 1;
+}
+
+console.log( fibonacci );
+// использование: завернём fibonacci в декоратор
+fibonacci = timingDecorator(fibonacci, "fibo");
+
+console.log( fibonacci );
+
+// неоднократные вызовы...
+console.log( fibonacci(10) ); // 55
+console.log( fibonacci(20) ); // 6765
+// ...
+
+// в любой момент можно получить общее количество времени на вызовы
+console.log( timers.fibo + 'мс' );
